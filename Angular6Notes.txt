@@ -1,0 +1,167 @@
+1. Typescript
+		Node.js > npm install -g @angular/cli@latest > node --version
+		angular CLI > ng --version
+
+	Angular application
+
+		1.components (Logic in typescript) > Main is ROOT Component
+		2.modules (namespaces in .NET)(contains directive,pipes,services,components importantly)(group of)
+		3.services (share commom logic across multiple components)	
+		4.pipes (For Formatting the data)
+		5.Routings (Navigation)
+		6.HTTP (REST API calls)
+		7.templates (HTML)(View)
+		8.bindings (sync between model and view)
+		9.directives (exmaple : style, changes the behaviour of html elements) structural & attribute directives [ng-model,ng-if]
+		10.Decorators (Attributes  example : Httppost)
+		
+
+Lazy Loading is the biggest advantage of angular.
+
+ng new <applicationname> to start a new project
+ng build - To build the application for development
+ng serve - To start the apllication. You can use  --port (anyportnumber)
+
+
+Main.ts will have all the angular code
+Polyfill.ts it is use for legacy browsers
+style.ts use for defining global styles
+
+
+To make it a module apply @ngmodule on a class
+To make it a Component apply @component on a class
+
+
+module > Declaration contains components,pipes,directives
+       > Imports contains modules that the root module is going to use
+       > Providers contains servies
+       > bootstraps contains the root components that will be loaded first
+
+
+Create new component or module
+	ng generate component/module [name]
+
+
+Data binding	1.one way
+			a.From model to view
+				{{}} - interpolation syntax
+				[] - property binding syntax
+ 			b.from view to model(known as "Event binding")
+
+		2.two way - bidirectional
+			ngModel - built in angular directive
+
+
+
+Compoenent communication
+
+		Parent-child > @inpit decorator
+		child-parent > @output decorator
+				Eventemitter<T> class
+
+The code has to be always written in child class
+		
+
+
+Built-in directives
+		structural directives	changes the structure of the DOM
+					*ngFor <div *ngFor = "let variable of collection"></div>
+
+					*ngIf <element *ngIf="condition"></element> must return a boolean value (true/false)
+					we can have else and then two keywords
+	
+		Attributes directives	Changes the behaviour of the html attributes on which they have applied
+					ngStyle
+					ngClass
+
+
+Angular Pipes
+
+
+			Tranformation of data
+			can be used inside a TS file ALSO
+			@pipes()
+			transform(input,.....){}
+			PURE PIPES IMPURE PIPES
+			mAKING pure to impure : @pipes({names:'',pure:false})
+
+Angular services
+		sharing logic across multiple components
+		its basically a typescript class decorated woth @injectable() decorator
+		achieveed by using DI (Mostly used for Testing)
+
+		used in pipes,directives and component
+
+
+		By default the service is available at the root component
+
+
+Angular Routing
+		1.RouterModule (@anguar/router) import
+		2.configure the routes
+			app.routes.ts(route config files)	
+
+		3.Extensionless routing
+
+
+Obseravables
+		angular uses rxjs for obseravavles
+		subscribe metod is important
+		observable is in rxjs we will have to import
+
+		Async pipe automatically subscribes to an observables
+
+
+Angular HTTP API
+
+		HttpClientModule   - @angular/common/http rootmodule import
+		HttpClient(service)- @angular/common/http service import
+
+
+Custom directives
+			1.component directives
+			2.attribute directives
+			3.structural directives
+
+
+Internalisation : displaying the app in multiple language
+
+Angular material : its a library given by google for attractive user interface
+
+Angular CDK : customisable component 
+
+--flat : The folder with the folder structure we want
+
+
+import is for typescript and imports is for angular
+
+folder structure with only TS file
+
+ng generate component test/components/c1 --flat --skipTests --inline-style --inline-template
+
+
+-- routing : can be only added to the module
+
+Forroot return routermodule with all routes and routing service injected in to the configuration
+
+
+DI :  provider is the service class itself,the injector calls the constructor of thr service class to create the service
+
+Observable : stream of data, uses rxjx ,similar to promises in JS, client side entity
+
+
+
+
+npm install --save json-server : install a fake rest api to perform - get,put,post and delete
+
+
+
+
+node_modules\.bin\json-server src/app/users.json - to start the server
+
+
+Router-link is a attribute directive and it is on client side
+
+
+
+		
